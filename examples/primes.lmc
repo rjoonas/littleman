@@ -1,0 +1,32 @@
+      INP     // Takes lower bound (inclusive, >1), upper bound (exclusive) from user
+      SUB ONE // and prints all prime numbers falling in between. Modified from source: 
+      STA NUM // Yet Another Python Little Man Computer by matsjoyce, https://github.com/matsjoyce/yaplmc
+      INP
+      STA MAX
+TLOOP LDA NUM
+      ADD ONE
+      STA NUM
+      SUB MAX
+      BRZ HALT
+      LDA ONE
+      STA DIV
+DLOOP LDA DIV
+      ADD ONE
+      STA DIV
+      SUB NUM
+      BRZ PRIME
+      LDA NUM
+MODUL SUB DIV
+      BRP MODUL
+      BRZ MODUL
+      ADD DIV
+      BRZ NPRIME
+      BRA DLOOP
+PRIME LDA NUM
+      OUT
+NPRIME BRA TLOOP
+HALT HLT
+NUM  DAT
+DIV  DAT
+MAX  DAT
+ONE  DAT 1

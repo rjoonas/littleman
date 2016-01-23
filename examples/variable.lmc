@@ -1,0 +1,11 @@
+    INP            // This program takes two variables from input and outputs them.
+    STA FIRST
+    INP
+    STA SECOND
+    LDA FIRST
+    OUT
+    LDA SECOND
+    OUT
+    HLT
+FIRST  DAT  
+SECOND DAT 0

@@ -1,0 +1,21 @@
+    INP       // Shows the first n fibonacci numbers where n is user input.
+    STA COUNT // Modified from source: Yet Another Python Little Man Computer by matsjoyce, https://github.com/matsjoyce/yaplmc
+START LDA FIRST 
+    OUT
+    ADD SECOND
+    STA TEMP
+    LDA FIRST
+    STA SECOND
+    LDA TEMP
+    STA FIRST
+    LDA COUNT
+    SUB ONE
+    STA COUNT
+    BRZ END
+    BRA START
+END HLT
+FIRST   DAT
+SECOND  DAT 1
+TEMP    DAT
+COUNT   DAT
+ONE     DAT 1
